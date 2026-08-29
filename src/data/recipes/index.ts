@@ -11,7 +11,9 @@ export type RecipeIngredient =
           ingredient: Ingredient;
           measurement: { unit: Unit; value: MeasurementValue };
       }
-    | Recipe;
+    | {
+          recipe: Recipe;
+      };
 
 export type Recipe = {
     slug: string;
