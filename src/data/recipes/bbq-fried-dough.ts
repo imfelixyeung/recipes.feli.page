@@ -135,7 +135,7 @@ const bbqSauce: Recipe = {
 
 export const bbqFriedDough: Recipe = {
     slug: "bbq-fried-dough",
-    name: "BBQ Fried Dough (Sauce)",
+    name: "BBQ Fried Dough",
     ingredients: [{ recipe: friedDough }, { recipe: bbqSauce }],
     steps: [
         {
