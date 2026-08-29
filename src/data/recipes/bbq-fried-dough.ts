@@ -66,8 +66,10 @@ const friedDough: Recipe = {
             instruction: "Cut into thumb-sized pieces",
         },
         {
-            type: "instruction",
-            instruction: "Air fry at 180C until dry and dark",
+            type: "air-fry",
+            temperature: 180,
+            duration: { seconds: 30 },
+            instruction: "until dry and dark",
         },
         {
             type: "instruction",

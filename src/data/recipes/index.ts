@@ -25,7 +25,13 @@ export type StepRecipe = {
     type: "recipe";
     recipe: Recipe;
 };
-export type Step = StepInstruction | StepRecipe;
+export type StepAirFry = {
+    type: "air-fry";
+    duration?: Partial<Record<Intl.DurationFormatUnit, number>> | null;
+    temperature?: number | null;
+    instruction?: string | null;
+};
+export type Step = StepInstruction | StepRecipe | StepAirFry;
 
 export type Recipe = {
     slug: string;
