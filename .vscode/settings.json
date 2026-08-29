@@ -10,5 +10,5 @@
         "source.organizeImports": "explicit",
         "source.fixAll.eslint": "explicit"
     },
-    "cSpell.words": ["Stockxx"]
+    "js/ts.tsdk.path": "node_modules/typescript/lib"
 }

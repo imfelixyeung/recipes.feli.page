@@ -1,3 +1,4 @@
+import { DurationInput } from "@formatjs/intl-durationformat";
 import { Ingredient } from "../ingredients";
 import { Unit } from "../units";
 import { bbqFriedDough } from "./bbq-fried-dough";
@@ -27,7 +28,7 @@ export type StepRecipe = {
 };
 export type StepAirFry = {
     type: "air-fry";
-    duration?: Partial<Record<Intl.DurationFormatUnit, number>> | null;
+    duration?: DurationInput | null;
     temperature?: number | null;
     instruction?: string | null;
 };
