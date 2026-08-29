@@ -17,6 +17,16 @@ const Page = async (props: PageProps<"/recipes/[slug]">) => {
     return (
         <div>
             <h1>{recipe.name}</h1>
+            <ul>
+                {recipe.ingredients.map((ingredient, index) => (
+                    <li key={index}>{JSON.stringify(ingredient)}</li>
+                ))}
+            </ul>
+            <ul>
+                {recipe.steps.map((step, index) => {
+                    return <li key={index}>{JSON.stringify(step)}</li>;
+                })}
+            </ul>
         </div>
     );
 };

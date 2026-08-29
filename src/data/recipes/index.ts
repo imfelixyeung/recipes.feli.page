@@ -15,13 +15,21 @@ export type RecipeIngredient =
           recipe: Recipe;
       };
 
+export type StepInstruction = {
+    type: "instruction";
+    instruction: string;
+};
+export type StepRecipe = {
+    type: "recipe";
+    recipe: Recipe;
+};
+export type Step = StepInstruction | StepRecipe;
+
 export type Recipe = {
     slug: string;
     name: string;
     ingredients: RecipeIngredient[];
-    steps: {
-        content: string;
-    }[];
+    steps: Step[];
 };
 
 export const recipes: Recipe[] = [bbqFriedDough];

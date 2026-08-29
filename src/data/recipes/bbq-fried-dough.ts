@@ -37,28 +37,37 @@ const friedDough: Recipe = {
     ],
     steps: [
         {
-            content: "Mix yeast with water",
+            type: "instruction",
+            instruction: "Mix yeast with water",
         },
         {
-            content: "Mix wheat gluten, flour with yeast water",
+            type: "instruction",
+            instruction: "Mix wheat gluten, flour with yeast water",
         },
         {
-            content: "Wrap dough with cling film until 2x size, about 2 hours",
+            type: "instruction",
+            instruction:
+                "Wrap dough with cling film until 2x size, about 2 hours",
         },
         {
-            content: "Steam 30 for minutes",
+            type: "instruction",
+            instruction: "Steam 30 for minutes",
         },
         {
-            content: "Let cool until warm",
+            type: "instruction",
+            instruction: "Let cool until warm",
         },
         {
-            content: "Cut into thumb-sized pieces",
+            type: "instruction",
+            instruction: "Cut into thumb-sized pieces",
         },
         {
-            content: "Air fry at 180C until dry and dark",
+            type: "instruction",
+            instruction: "Air fry at 180C until dry and dark",
         },
         {
-            content: "Let cool",
+            type: "instruction",
+            instruction: "Let cool",
         },
     ],
 };
@@ -119,16 +128,20 @@ const bbqSauce: Recipe = {
     ],
     steps: [
         {
-            content: "Use hot water to dissolve maltose",
+            type: "instruction",
+            instruction: "Use hot water to dissolve maltose",
         },
         {
-            content: "On a pan, add fry powers until fragrant",
+            type: "instruction",
+            instruction: "On a pan, add fry powers until fragrant",
         },
         {
-            content: "Add maltose water, sugar and salt into pan",
+            type: "instruction",
+            instruction: "Add maltose water, sugar and salt into pan",
         },
         {
-            content: "Stir until gooey",
+            type: "instruction",
+            instruction: "Stir until gooey",
         },
     ],
 };
@@ -139,10 +152,20 @@ export const bbqFriedDough: Recipe = {
     ingredients: [{ recipe: friedDough }, { recipe: bbqSauce }],
     steps: [
         {
-            content: "Quickly mix fried dough into bbq sauce",
+            type: "recipe",
+            recipe: friedDough,
         },
         {
-            content: "Use fan to cool down quickly",
+            type: "recipe",
+            recipe: bbqSauce,
+        },
+        {
+            type: "instruction",
+            instruction: "Quickly mix fried dough into bbq sauce",
+        },
+        {
+            type: "instruction",
+            instruction: "Use fan to cool down quickly",
         },
     ],
 };
