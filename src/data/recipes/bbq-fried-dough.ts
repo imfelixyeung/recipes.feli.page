@@ -5,8 +5,9 @@ import { units } from "../units";
 const friedDough: Recipe = {
     slug: "bbq-fried-dough-dough",
     name: "BBQ Fried Dough (Dough)",
-    ingredients: [
+    requirements: [
         {
+            type: "ingredient",
             ingredient: ingredients.wheatGluten,
             measurement: {
                 unit: units.gram,
@@ -14,6 +15,7 @@ const friedDough: Recipe = {
             },
         },
         {
+            type: "ingredient",
             ingredient: ingredients.flourPlain,
             measurement: {
                 unit: units.gram,
@@ -21,6 +23,7 @@ const friedDough: Recipe = {
             },
         },
         {
+            type: "ingredient",
             ingredient: ingredients.yeast,
             measurement: {
                 unit: units.gram,
@@ -28,6 +31,7 @@ const friedDough: Recipe = {
             },
         },
         {
+            type: "ingredient",
             ingredient: ingredients.water,
             measurement: {
                 unit: units.gram,
@@ -75,8 +79,9 @@ const friedDough: Recipe = {
 const bbqSauce: Recipe = {
     slug: "bbq-fried-dough-sauce",
     name: "BBQ Fried Dough (Sauce)",
-    ingredients: [
+    requirements: [
         {
+            type: "ingredient",
             ingredient: ingredients.curryPowder,
             measurement: {
                 unit: units.teaspoon,
@@ -84,6 +89,7 @@ const bbqSauce: Recipe = {
             },
         },
         {
+            type: "ingredient",
             ingredient: ingredients.fiveSpicePowder,
             measurement: {
                 unit: units.teaspoon,
@@ -91,6 +97,7 @@ const bbqSauce: Recipe = {
             },
         },
         {
+            type: "ingredient",
             ingredient: ingredients.chiliPowder,
             measurement: {
                 unit: units.teaspoon,
@@ -98,6 +105,7 @@ const bbqSauce: Recipe = {
             },
         },
         {
+            type: "ingredient",
             ingredient: ingredients.maltose,
             measurement: {
                 unit: units.tablespoon,
@@ -105,6 +113,7 @@ const bbqSauce: Recipe = {
             },
         },
         {
+            type: "ingredient",
             ingredient: ingredients.salt,
             measurement: {
                 unit: units.teaspoon,
@@ -112,6 +121,7 @@ const bbqSauce: Recipe = {
             },
         },
         {
+            type: "ingredient",
             ingredient: ingredients.sugar,
             measurement: {
                 unit: units.tablespoon,
@@ -119,6 +129,7 @@ const bbqSauce: Recipe = {
             },
         },
         {
+            type: "ingredient",
             ingredient: ingredients.water,
             measurement: {
                 unit: units.millilitre,
@@ -149,7 +160,10 @@ const bbqSauce: Recipe = {
 export const bbqFriedDough: Recipe = {
     slug: "bbq-fried-dough",
     name: "BBQ Fried Dough",
-    ingredients: [{ recipe: friedDough }, { recipe: bbqSauce }],
+    requirements: [
+        { type: "recipe", recipe: friedDough },
+        { type: "recipe", recipe: bbqSauce },
+    ],
     steps: [
         {
             type: "recipe",

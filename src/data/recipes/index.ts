@@ -6,12 +6,14 @@ export type MeasurementValueFixed = number;
 export type MeasurementValueRanged = [number, number];
 export type MeasurementValue = MeasurementValueFixed | MeasurementValueRanged;
 
-export type RecipeIngredient =
+export type RecipeRequirement =
     | {
+          type: "ingredient";
           ingredient: Ingredient;
           measurement: { unit: Unit; value: MeasurementValue };
       }
     | {
+          type: "recipe";
           recipe: Recipe;
       };
 
@@ -28,7 +30,7 @@ export type Step = StepInstruction | StepRecipe;
 export type Recipe = {
     slug: string;
     name: string;
-    ingredients: RecipeIngredient[];
+    requirements: RecipeRequirement[];
     steps: Step[];
 };
 

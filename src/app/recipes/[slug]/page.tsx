@@ -1,3 +1,5 @@
+import RecipeRequirements from "@/src/components/recipe/requirements";
+import RecipeSteps from "@/src/components/recipe/steps";
 import { recipes } from "@/src/data/recipes";
 import { notFound } from "next/navigation";
 
@@ -15,18 +17,12 @@ const Page = async (props: PageProps<"/recipes/[slug]">) => {
     }
 
     return (
-        <div>
+        <div className="prose container mx-auto">
             <h1>{recipe.name}</h1>
-            <ul>
-                {recipe.ingredients.map((ingredient, index) => (
-                    <li key={index}>{JSON.stringify(ingredient)}</li>
-                ))}
-            </ul>
-            <ul>
-                {recipe.steps.map((step, index) => {
-                    return <li key={index}>{JSON.stringify(step)}</li>;
-                })}
-            </ul>
+            <h2>Requirements</h2>
+            <RecipeRequirements requirements={recipe.requirements} />
+            <h2>Steps</h2>
+            <RecipeSteps steps={recipe.steps} />
         </div>
     );
 };
