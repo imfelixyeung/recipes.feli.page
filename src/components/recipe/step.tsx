@@ -4,13 +4,13 @@ import RecipeSteps from "./steps";
 
 const RecipeStep = ({ step }: { step: Step }) => {
     if (step.type === "instruction") {
-        return <p>{step.instruction}</p>;
+        return <>{step.instruction}</>;
     }
 
     if (step.type === "recipe") {
         return (
             <>
-                <p>Make {step.recipe.name}</p>
+                <span>Make {step.recipe.name}</span>
                 <RecipeSteps steps={step.recipe.steps} />
             </>
         );

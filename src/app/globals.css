@@ -1,10 +1,6 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
-@plugin "daisyui" {
-    themes:
-        silk --default,
-        coffee --prefersdark;
-}
+@plugin "daisyui";
 
 @theme inline {
     --font-sans: var(--font-app-sans);
