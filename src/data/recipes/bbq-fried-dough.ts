@@ -3,6 +3,7 @@ import { ingredients } from "../ingredients";
 import { units } from "../units";
 
 const friedDough: Recipe = {
+    slug: "bbq-fried-dough-dough",
     name: "BBQ Fried Dough (Dough)",
     ingredients: [
         {
@@ -63,6 +64,7 @@ const friedDough: Recipe = {
 };
 
 const bbqSauce: Recipe = {
+    slug: "bbq-fried-dough-sauce",
     name: "BBQ Fried Dough (Sauce)",
     ingredients: [
         {
@@ -132,6 +134,7 @@ const bbqSauce: Recipe = {
 };
 
 export const bbqFriedDough: Recipe = {
+    slug: "bbq-fried-dough",
     name: "BBQ Fried Dough (Sauce)",
     ingredients: [friedDough, bbqSauce],
     steps: [

@@ -14,6 +14,7 @@ export type RecipeIngredient =
     | Recipe;
 
 export type Recipe = {
+    slug: string;
     name: string;
     ingredients: RecipeIngredient[];
     steps: {
