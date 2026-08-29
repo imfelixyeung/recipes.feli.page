@@ -1,7 +1,11 @@
-import React from "react";
+import Link from "next/link";
 
 const Page = () => {
-    return <div>Page</div>;
+    return (
+        <div>
+            <Link href="/recipes">Browse recipes</Link>
+        </div>
+    );
 };
 
 export default Page;
