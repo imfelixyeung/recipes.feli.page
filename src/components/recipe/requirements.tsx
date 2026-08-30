@@ -1,5 +1,5 @@
 import { RecipeRequirement as RecipeRequirementType } from "@/src/data/recipes";
-import { SupportedLocale } from "@/src/i18n";
+import { AppLocale } from "@/src/i18n";
 import RecipeRequirement from "./requirement";
 
 const RecipeRequirements = ({
@@ -7,7 +7,7 @@ const RecipeRequirements = ({
     locale,
 }: {
     requirements: RecipeRequirementType[];
-    locale: SupportedLocale;
+    locale: AppLocale;
 }) => {
     return (
         <ul>

@@ -1,4 +1,5 @@
-import { getLocale } from "@/src/i18n";
+import { getLocale, s } from "@/src/i18n";
+import { strings } from "@/src/i18n/strings";
 import type { Metadata } from "next";
 import { Google_Sans_Flex } from "next/font/google";
 import Link from "next/link";
@@ -9,8 +10,12 @@ const sans = Google_Sans_Flex({
     subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-    title: "Recipes",
+export const generateMetadata = async ({
+    params,
+}: LayoutProps<"/[locale]">): Promise<Metadata> => {
+    const locale = await getLocale(params);
+
+    return { title: s(locale, strings.recipes) };
 };
 
 export default async function RootLayout({
@@ -23,7 +28,7 @@ export default async function RootLayout({
             <body className="flex min-h-full flex-col">
                 <nav className="navbar">
                     <Link href={`/${locale}`} className="btn btn-ghost text-xl">
-                        Recipes
+                        {s(locale, strings.recipes)}
                     </Link>
                 </nav>
                 <main className="container mx-auto mb-16 px-6">{children}</main>

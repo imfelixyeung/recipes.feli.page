@@ -1,10 +1,26 @@
 import { DurationFormat } from "@formatjs/intl-durationformat";
+import { AppLocale } from "../i18n";
 
-export const celsiusFormatter = new Intl.NumberFormat("en-GB", {
-    style: "unit",
-    unit: "celsius",
-});
+const cache = {
+    cf: {} as Partial<Record<AppLocale, Intl.NumberFormat>>,
+    df: {} as Partial<Record<AppLocale, DurationFormat>>,
+};
 
-export const durationFormatter = new DurationFormat("en-GB", {
-    style: "short",
-});
+export const getCelsiusFormatter = (locale: AppLocale) => {
+    if (!(locale in cache.cf)) {
+        cache.cf[locale] = new Intl.NumberFormat(locale, {
+            style: "unit",
+            unit: "celsius",
+        });
+    }
+    return cache.cf[locale]!;
+};
+
+export const getDurationFormatter = (locale: AppLocale) => {
+    if (!(locale in cache.df)) {
+        cache.df[locale] = new DurationFormat(locale, {
+            style: "short",
+        });
+    }
+    return cache.df[locale]!;
+};

@@ -1,3 +1,4 @@
+import { LocalisedString } from "@/src/i18n";
 import { DurationInput } from "@formatjs/intl-durationformat";
 import { Ingredient } from "../ingredients";
 import { Unit } from "../units";
@@ -20,7 +21,7 @@ export type RecipeRequirement =
 
 export type StepInstruction = {
     type: "instruction";
-    instruction: string;
+    instruction: LocalisedString;
 };
 export type StepRecipe = {
     type: "recipe";
@@ -30,13 +31,13 @@ export type StepAirFry = {
     type: "air-fry";
     duration?: DurationInput | null;
     temperature?: number | null;
-    instruction?: string | null;
+    instruction?: LocalisedString | null;
 };
 export type Step = StepInstruction | StepRecipe | StepAirFry;
 
 export type Recipe = {
     slug: string;
-    name: string;
+    name: LocalisedString;
     requirements: RecipeRequirement[];
     steps: Step[];
 };

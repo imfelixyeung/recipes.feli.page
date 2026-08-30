@@ -1,5 +1,5 @@
 import { RecipeRequirement as RecipeIngredientType } from "@/src/data/recipes";
-import { SupportedLocale } from "@/src/i18n";
+import { AppLocale, s } from "@/src/i18n";
 import Link from "next/link";
 import RecipeMeasurement from "./measurement";
 import RecipeRequirements from "./requirements";
@@ -9,13 +9,13 @@ const RecipeRequirement = ({
     locale,
 }: {
     requirement: RecipeIngredientType;
-    locale: SupportedLocale;
+    locale: AppLocale;
 }) => {
     if (requirement.type === "recipe") {
         const { recipe } = requirement;
         return (
             <>
-                <p>For {recipe.name}</p>
+                <p>{s(locale, recipe.name)}</p>
                 <RecipeRequirements
                     locale={locale}
                     requirements={recipe.requirements}
@@ -29,10 +29,10 @@ const RecipeRequirement = ({
         return (
             <>
                 <b>
-                    <RecipeMeasurement {...measurement} />
+                    <RecipeMeasurement locale={locale} {...measurement} />
                 </b>{" "}
                 <Link href={`/${locale}/ingredients/${ingredient.slug}`}>
-                    {ingredient.name}
+                    {s(locale, ingredient.name)}
                 </Link>
             </>
         );
