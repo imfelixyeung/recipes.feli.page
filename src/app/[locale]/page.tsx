@@ -6,7 +6,7 @@ const Page = async ({ params }: PageProps<"/[locale]">) => {
     const locale = await getLocale(params);
     return (
         <div>
-            <Link href={`/${locale}/recipes`}>
+            <Link href={`/${locale}/recipes`} className="btn btn-ghost btn-xl">
                 {s(locale, strings.browseRecipes)}
             </Link>
         </div>
