@@ -30,8 +30,8 @@ const findRecipes = (recipes: Recipe[], ingredient: Ingredient): Recipe[] => {
     return candidates;
 };
 
-const Page = async ({ params }: PageProps<"/ingredients/[slug]">) => {
-    const { slug } = await params;
+const Page = async ({ params }: PageProps<"/[locale]/ingredients/[slug]">) => {
+    const { slug, locale } = await params;
     const ingredient = findIngredient(slug);
     if (!ingredient) {
         notFound();
@@ -50,7 +50,9 @@ const Page = async ({ params }: PageProps<"/ingredients/[slug]">) => {
                             <ul>
                                 {relatedRecipes.map((r) => (
                                     <li key={r.slug}>
-                                        <Link href={`/recipes/${r.slug}`}>
+                                        <Link
+                                            href={`/${locale}/recipes/${r.slug}`}
+                                        >
                                             {r.name}
                                         </Link>
                                     </li>

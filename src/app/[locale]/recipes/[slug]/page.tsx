@@ -1,6 +1,7 @@
 import RecipeRequirements from "@/src/components/recipe/requirements";
 import RecipeSteps from "@/src/components/recipe/steps";
 import { recipes } from "@/src/data/recipes";
+import { getLocale } from "@/src/i18n";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -9,8 +10,9 @@ export async function generateStaticParams() {
     }));
 }
 
-const Page = async (props: PageProps<"/recipes/[slug]">) => {
-    const { slug } = await props.params;
+const Page = async ({ params }: PageProps<"/[locale]/recipes/[slug]">) => {
+    const locale = await getLocale(params);
+    const { slug } = await params;
     const recipe = recipes.find((r) => r.slug === slug);
     if (!recipe) {
         notFound();
@@ -26,6 +28,7 @@ const Page = async (props: PageProps<"/recipes/[slug]">) => {
                             <h2 className="card-title">Requirements</h2>
                             <div className="prose">
                                 <RecipeRequirements
+                                    locale={locale}
                                     requirements={recipe.requirements}
                                 />
                             </div>
