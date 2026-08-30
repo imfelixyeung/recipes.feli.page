@@ -1,4 +1,5 @@
 import { RecipeRequirement as RecipeIngredientType } from "@/src/data/recipes";
+import Link from "next/link";
 import RecipeMeasurement from "./measurement";
 import RecipeRequirements from "./requirements";
 
@@ -18,12 +19,15 @@ const RecipeRequirement = ({
     }
 
     if (requirement.type === "ingredient") {
+        const { ingredient, measurement } = requirement;
         return (
             <>
                 <b>
-                    <RecipeMeasurement {...requirement.measurement} />
+                    <RecipeMeasurement {...measurement} />
                 </b>{" "}
-                <span>{requirement.ingredient.name}</span>
+                <Link href={`/ingredients/${ingredient.slug}`}>
+                    {ingredient.name}
+                </Link>
             </>
         );
     }

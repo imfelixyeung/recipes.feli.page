@@ -1,47 +1,49 @@
 export type Ingredient = {
-    id: string;
+    slug: string;
     name: string;
 };
 
 export const ingredients = {
     curryPowder: {
-        id: "curry-powder",
+        slug: "curry-powder",
         name: "Curry Powder",
     },
     fiveSpicePowder: {
-        id: "five-spice-powder",
+        slug: "five-spice-powder",
         name: "Five Spice Powder",
     },
     chiliPowder: {
-        id: "chili-powder",
+        slug: "chili-powder",
         name: "Chili Powder",
     },
     maltose: {
-        id: "maltose",
+        slug: "maltose",
         name: "Maltose",
     },
     salt: {
-        id: "salt",
+        slug: "salt",
         name: "Salt",
     },
     sugar: {
-        id: "sugar",
+        slug: "sugar",
         name: "Sugar",
     },
     water: {
-        id: "water",
+        slug: "water",
         name: "Water",
     },
     wheatGluten: {
-        id: "wheat-gluten",
+        slug: "wheat-gluten",
         name: "Wheat Gluten",
     },
     flourPlain: {
-        id: "plain-flour",
+        slug: "plain-flour",
         name: "Plain Flour",
     },
     yeast: {
-        id: "yeast",
+        slug: "yeast",
         name: "Teast",
     },
 } as const satisfies Record<string, Ingredient>;
+
+export type IngredientSlug = keyof typeof ingredients;
