@@ -42,10 +42,36 @@ export const ingredients = {
         slug: "plain-flour",
         name: { "en-GB": "Plain Flour", "zh-HK": "普通麵粉" },
     },
+    flourLowGluten: {
+        slug: "low-gluten-flour",
+        name: { "en-GB": "Low-gluten Flour", "zh-HK": "低筋麵粉" },
+    },
+    flourTapioca: {
+        slug: "low-gluten-flour",
+        name: { "en-GB": "Tapioca Flour", "zh-HK": "木薯粉" },
+    },
     yeast: {
         slug: "yeast",
-        name: { "en-GB": "Teast", "zh-HK": "酵母" },
+        name: { "en-GB": "Yeast", "zh-HK": "酵母" },
     },
+    powderCustard: {
+        slug: "powdercustard",
+        name: { "en-GB": "Custard powder", "zh-HK": "吉士粉" },
+    },
+    powderBaking: {
+        slug: "powderbaking",
+        name: { "en-GB": "Baking powder", "zh-HK": "泡打粉" },
+    },
+    eggs: { slug: "eggs", name: { "en-GB": "Eggs", "zh-HK": "雞蛋" } },
+    milk: {
+        slug: "milk",
+        name: { "en-GB": "Evaporated milk", "zh-HK": "淡奶" },
+    },
+    milkEvaporated: {
+        slug: "milkevaporated",
+        name: { "en-GB": "Milk", "zh-HK": "奶" },
+    },
+    oil: { slug: "oil", name: { "en-GB": "Oil", "zh-HK": "油" } },
 } as const satisfies Record<string, Ingredient>;
 
 export type IngredientSlug = keyof typeof ingredients;
