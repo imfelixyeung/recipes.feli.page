@@ -70,8 +70,7 @@ export const hongKongMilkTea: Recipe = {
             instruction: {
                 "en-GB":
                     "Before drinking, take it out, reheat, and froth with a milk frother for 1-2 minutes until it is fully foamy.",
-                "zh-HK":
-                    "飲之前拎出嚟加熱，再用奶泡器打1兩分鐘，打到起晒泡。",
+                "zh-HK": "飲之前拎出嚟加熱，再用奶泡器打1兩分鐘，打到起晒泡。",
             },
         },
         {
@@ -79,8 +78,7 @@ export const hongKongMilkTea: Recipe = {
             instruction: {
                 "en-GB":
                     "For each cup, add 2 tsp of sugar and pour in ~20mm of evaporated milk.",
-                "zh-HK":
-                    "每杯加2茶匙糖，再落大約20mm高嘅淡奶落杯度。",
+                "zh-HK": "每杯加2茶匙糖，再落大約20mm高嘅淡奶落杯度。",
             },
         },
         {

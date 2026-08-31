@@ -1,3 +1,5 @@
 next-env.d.ts
 package.json
 pnpm*
+AGENTS.md
+.opencode

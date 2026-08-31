@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "format": "prettier --write .",
+    "lint": "bunx tsc --noEmit"
   },
   "dependencies": {
     "@formatjs/intl-durationformat": "^0.10.18",
