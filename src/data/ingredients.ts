@@ -92,6 +92,10 @@ export const ingredients = {
         slug: "yorkshire-tea",
         name: { "en-GB": "Yorkshire Tea", "zh-HK": "約克郡茶" },
     },
+    teaMsStrong: {
+        slug: "ms-strong-tea",
+        name: { "en-GB": "M&S Strong Tea", "zh-HK": "M&S濃茶" },
+    },
     teaDecaf: {
         slug: "decaf-tea",
         name: { "en-GB": "Decaf Tea", "zh-HK": "低因紅茶" },
