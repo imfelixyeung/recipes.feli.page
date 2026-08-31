@@ -88,6 +88,18 @@ export const ingredients = {
         slug: "ginger",
         name: { "en-GB": "Ginger", "zh-HK": "薑" },
     },
+    teaYorkshire: {
+        slug: "yorkshire-tea",
+        name: { "en-GB": "Yorkshire Tea", "zh-HK": "約克郡茶" },
+    },
+    teaDecaf: {
+        slug: "decaf-tea",
+        name: { "en-GB": "Decaf Tea", "zh-HK": "低因紅茶" },
+    },
+    teaCeylon: {
+        slug: "ceylon-tea",
+        name: { "en-GB": "Ceylon Tea", "zh-HK": "錫蘭紅茶" },
+    },
 } as const satisfies Record<string, Ingredient>;
 
 export type IngredientSlug = keyof typeof ingredients;

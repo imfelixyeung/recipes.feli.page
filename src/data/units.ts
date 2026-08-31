@@ -17,4 +17,13 @@ export const units = {
     gram: {
         name: { "en-GB": "Gram", "zh-HK": "克" },
     },
+    count: {
+        name: { "en-GB": "Count", "zh-HK": "個" },
+    },
+    cup: {
+        name: { "en-GB": "Cup", "zh-HK": "杯" },
+    },
+    millimetre: {
+        name: { "en-GB": "Millimetre", "zh-HK": "毫米" },
+    },
 } as const satisfies Record<string, Unit>;
