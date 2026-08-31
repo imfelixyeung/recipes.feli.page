@@ -4,6 +4,7 @@ import { Ingredient } from "../ingredients";
 import { Unit } from "../units";
 import { bbqFriedDough } from "./bbq-fried-dough";
 import { eggWaffleRecipe } from "./egg-waffle";
+import { gingerMilkPudding } from "./ginger-milk-pudding";
 
 export type MeasurementValueFixed = number;
 export type MeasurementValueRanged = [number, number];
@@ -43,4 +44,8 @@ export type Recipe = {
     steps: Step[];
 };
 
-export const recipes: Recipe[] = [bbqFriedDough, eggWaffleRecipe];
+export const recipes: Recipe[] = [
+    bbqFriedDough,
+    eggWaffleRecipe,
+    gingerMilkPudding,
+];

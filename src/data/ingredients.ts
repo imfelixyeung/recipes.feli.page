@@ -72,6 +72,22 @@ export const ingredients = {
         name: { "en-GB": "Milk", "zh-HK": "奶" },
     },
     oil: { slug: "oil", name: { "en-GB": "Oil", "zh-HK": "油" } },
+    milkWhole: {
+        slug: "whole-milk",
+        name: { "en-GB": "Whole Milk", "zh-HK": "全脂奶" },
+    },
+    condensedMilk: {
+        slug: "condensed-milk",
+        name: { "en-GB": "Condensed Milk", "zh-HK": "煉奶" },
+    },
+    gingerJuice: {
+        slug: "ginger-juice",
+        name: { "en-GB": "Ginger Juice", "zh-HK": "薑汁" },
+    },
+    ginger: {
+        slug: "ginger",
+        name: { "en-GB": "Ginger", "zh-HK": "薑" },
+    },
 } as const satisfies Record<string, Ingredient>;
 
 export type IngredientSlug = keyof typeof ingredients;
