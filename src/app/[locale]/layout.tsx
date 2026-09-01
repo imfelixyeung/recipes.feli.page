@@ -1,3 +1,4 @@
+import { LanguageSwitcher } from "@/src/components/LanguageSwitcher";
 import { getLocale, s } from "@/src/i18n";
 import { strings } from "@/src/i18n/strings";
 import type { Metadata } from "next";
@@ -27,9 +28,14 @@ export default async function RootLayout({
         <html lang={locale} className={`${sans.variable} h-full antialiased`}>
             <body className="flex min-h-full flex-col">
                 <nav className="navbar">
-                    <Link href={`/${locale}`} className="btn btn-ghost text-xl">
-                        {s(locale, strings.recipes)}
-                    </Link>
+                    <div className="navbar-start">
+                        <Link href={`/${locale}`} className="btn btn-ghost text-xl">
+                            {s(locale, strings.recipes)}
+                        </Link>
+                    </div>
+                    <div className="navbar-end">
+                        <LanguageSwitcher locale={locale} />
+                    </div>
                 </nav>
                 <main className="container mx-auto mb-16 px-6">{children}</main>
             </body>
