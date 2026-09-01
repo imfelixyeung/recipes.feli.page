@@ -4,6 +4,7 @@ import { Ingredient } from "../ingredients";
 import { Unit } from "../units";
 import { bbqFriedDough } from "./bbq-fried-dough";
 import { eggWaffleRecipe } from "./egg-waffle";
+import { eggTart } from "./egg-tart";
 import { gingerMilkPudding } from "./ginger-milk-pudding";
 import { hongKongMilkTea } from "./hong-kong-milk-tea";
 
@@ -43,10 +44,12 @@ export type Recipe = {
     name: LocalisedString;
     requirements: RecipeRequirement[];
     steps: Step[];
+    source?: string;
 };
 
 export const recipes: Recipe[] = [
     bbqFriedDough,
+    eggTart,
     eggWaffleRecipe,
     gingerMilkPudding,
     hongKongMilkTea,
