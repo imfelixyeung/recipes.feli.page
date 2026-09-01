@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# recipes.feli.page
 
-## Getting Started
+A bilingual (English / Cantonese) recipe site for Hong Kong-style home cooking. All content is local TypeScript data — no CMS, no backend.
 
-First, run the development server:
+## Tech stack
+
+- [Next.js 16](https://nextjs.org/) (App Router)
+- [React 19](https://react.dev/)
+- [Tailwind CSS v4](https://tailwindcss.com/) + [daisyUI 5](https://daisyui.com/)
+- [TypeScript 7](https://www.typescriptlang.org/)
+- [Prettier](https://prettier.io/) (4-space indent, Tailwind plugin)
+
+## Getting started
+
+Requires [Bun](https://bun.sh/).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+bun install
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000/en-GB](http://localhost:3000/en-GB).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+| --- | --- |
+| `bun dev` | Start dev server |
+| `bun run build` | Production build |
+| `bun run lint` | Type-check (`tsc --noEmit`) |
+| `bun run format` | Format with Prettier |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   └── [locale]/            # Locale-parametrised routes
+│       ├── page.tsx         # Homepage (links to recipes)
+│       ├── layout.tsx       # Root layout (navbar, fonts)
+│       ├── recipes/
+│       │   ├── page.tsx     # Recipe listing
+│       │   └── [slug]/
+│       │       ├── page.tsx  # Individual recipe page
+│       │       └── layout.tsx
+│       └── ingredients/
+│           └── [slug]/page.tsx
+├── components/recipe/       # Recipe UI (steps, requirements, measurements)
+├── data/
+│   ├── ingredients.ts       # Ingredient definitions
+│   ├── units.ts             # Measurement units
+│   └── recipes/
+│       ├── index.ts         # Recipe registry & types
+│       ├── egg-tart.ts
+│       ├── egg-waffle.ts
+│       ├── hong-kong-milk-tea.ts
+│       ├── ginger-milk-pudding.ts
+│       └── bbq-fried-dough.ts
+├── i18n/
+│   ├── index.ts             # Locale config & LocalisedString type
+│   └── strings.ts           # UI copy strings
+└── lib/
+    └── formatters.ts        # Intl.NumberFormat / DurationFormat helpers
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Data model
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Recipes are defined as TypeScript objects with a `LocalisedString` type that provides `en-GB` (required) and `zh-HK` (optional, falls back to English) translations. Each recipe has a slug, localised name, ingredient requirements (with measurements), and ordered steps (instructions, air-fry settings, or sub-recipes).
 
-## Deploy on Vercel
+To add a recipe: create a `.ts` file in `src/data/recipes/`, define the `Recipe` object, and register it in the `recipes` array in `src/data/recipes/index.ts`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Adding a new ingredient
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add an entry to `src/data/ingredients.ts` with a slug and localised name, then reference it in recipe files.
+
+## Locale
+
+- **en-GB** — always required
+- **zh-HK** — optional, falls back to en-GB
+
+The root `/` redirects to `/{defaultLocale}` (`en-GB`).
