@@ -20,4 +20,8 @@ export const strings = {
     ingredients: { "en-GB": "Ingredients", "zh-HK": "材料" },
     steps: { "en-GB": "Steps", "zh-HK": "步驟" },
     source: { "en-GB": "Source:", "zh-HK": "來源：" },
-} as const satisfies Record<string, LocalisedString>;
+    localeName: {
+        "en-GB": { "en-GB": "English", "zh-HK": "英文" },
+        "zh-HK": { "en-GB": "Chinese", "zh-HK": "中文" },
+    },
+} as const satisfies Record<string, LocalisedString | Record<string, LocalisedString>>;
