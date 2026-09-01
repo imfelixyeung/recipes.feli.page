@@ -63,6 +63,18 @@ export const ingredients = {
         name: { "en-GB": "Baking powder", "zh-HK": "泡打粉" },
     },
     eggs: { slug: "eggs", name: { "en-GB": "Eggs", "zh-HK": "雞蛋" } },
+    icingSugar: {
+        slug: "icing-sugar",
+        name: { "en-GB": "Icing Sugar", "zh-HK": "糖霜" },
+    },
+    butterUnsalted: {
+        slug: "unsalted-butter",
+        name: { "en-GB": "Unsalted Butter", "zh-HK": "無鹽牛油" },
+    },
+    milkPowder: {
+        slug: "milk-powder",
+        name: { "en-GB": "Milk Powder", "zh-HK": "奶粉" },
+    },
     milk: {
         slug: "milk",
         name: { "en-GB": "Evaporated milk", "zh-HK": "淡奶" },
