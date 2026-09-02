@@ -77,11 +77,11 @@ export const ingredients = {
     },
     milk: {
         slug: "milk",
-        name: { "en-GB": "Evaporated milk", "zh-HK": "淡奶" },
+        name: { "en-GB": "Milk", "zh-HK": "奶" },
     },
     milkEvaporated: {
         slug: "milkevaporated",
-        name: { "en-GB": "Milk", "zh-HK": "奶" },
+        name: { "en-GB": "Evaporated milk", "zh-HK": "淡奶" },
     },
     oil: { slug: "oil", name: { "en-GB": "Oil", "zh-HK": "油" } },
     milkWhole: {
