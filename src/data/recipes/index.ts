@@ -6,7 +6,17 @@ import { bbqFriedDough } from "./bbq-fried-dough";
 import { eggWaffleRecipe } from "./egg-waffle";
 import { eggTart } from "./egg-tart";
 import { gingerMilkPudding } from "./ginger-milk-pudding";
+import { putChaiKo } from "./put-chai-ko";
+import { putChaiKoV2 } from "./put-chai-ko-v2";
 import { hongKongMilkTea } from "./hong-kong-milk-tea";
+import { hongKongEggRolls } from "./hong-kong-egg-rolls";
+import { caramelPopcorn } from "./caramel-popcorn";
+import { porkBeefJerky } from "./pork-beef-jerky";
+import { tokyoBanana } from "./tokyo-banana";
+import { chiffonCake } from "./chiffon-cake";
+import { riceCookerCake } from "./rice-cooker-cake";
+import { creamPuffs } from "./cream-puffs";
+import { pineappleBun } from "./pineapple-bun";
 
 export type MeasurementValueFixed = number;
 export type MeasurementValueRanged = [number, number];
@@ -52,5 +62,15 @@ export const recipes: Recipe[] = [
     eggTart,
     eggWaffleRecipe,
     gingerMilkPudding,
+    putChaiKo,
+    putChaiKoV2,
     hongKongMilkTea,
+    hongKongEggRolls,
+    caramelPopcorn,
+    porkBeefJerky,
+    tokyoBanana,
+    chiffonCake,
+    riceCookerCake,
+    creamPuffs,
+    pineappleBun,
 ];

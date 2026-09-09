@@ -116,6 +116,106 @@ export const ingredients = {
         slug: "ceylon-tea",
         name: { "en-GB": "Ceylon Tea", "zh-HK": "錫蘭紅茶" },
     },
+    eggYolk: {
+        slug: "egg-yolk",
+        name: { "en-GB": "Egg Yolk", "zh-HK": "蛋黃" },
+    },
+    eggWhite: {
+        slug: "egg-white",
+        name: { "en-GB": "Egg White", "zh-HK": "蛋白" },
+    },
+    bananaFlavouredMilk: {
+        slug: "banana-flavoured-milk",
+        name: { "en-GB": "Banana-flavoured Milk", "zh-HK": "香蕉味牛奶" },
+    },
+    banana: {
+        slug: "banana",
+        name: { "en-GB": "Banana", "zh-HK": "香蕉" },
+    },
+    cornStarch: {
+        slug: "corn-starch",
+        name: { "en-GB": "Corn Starch", "zh-HK": "粟粉" },
+    },
+    vanillaExtract: {
+        slug: "vanilla-extract",
+        name: { "en-GB": "Vanilla Extract", "zh-HK": "雲呢拿香油" },
+    },
+    lemonJuice: {
+        slug: "lemon-juice",
+        name: { "en-GB": "Lemon Juice", "zh-HK": "檸檬汁" },
+    },
+    bakingSoda: {
+        slug: "baking-soda",
+        name: { "en-GB": "Baking Soda", "zh-HK": "梳打粉" },
+    },
+    redBeans: {
+        slug: "red-beans",
+        name: { "en-GB": "Red Beans", "zh-HK": "紅豆" },
+    },
+    riceFlour: {
+        slug: "rice-flour",
+        name: { "en-GB": "Rice Flour", "zh-HK": "粘米粉" },
+    },
+    brownSugarSlab: {
+        slug: "brown-sugar-slab",
+        name: { "en-GB": "Brown Slab Sugar", "zh-HK": "片糖" },
+    },
+    brownSugar: {
+        slug: "brown-sugar",
+        name: { "en-GB": "Brown Sugar", "zh-HK": "黑糖" },
+    },
+    poppingCorn: {
+        slug: "popping-corn",
+        name: { "en-GB": "Popping Corn", "zh-HK": "爆谷玉米" },
+    },
+    whiteSugar: {
+        slug: "white-sugar",
+        name: { "en-GB": "White Sugar", "zh-HK": "白糖" },
+    },
+    mincedBeef: {
+        slug: "minced-beef",
+        name: { "en-GB": "Minced Beef", "zh-HK": "免治牛肉" },
+    },
+    mincedPork: {
+        slug: "minced-pork",
+        name: { "en-GB": "Minced Pork", "zh-HK": "免治豬肉" },
+    },
+    fishSauce: {
+        slug: "fish-sauce",
+        name: { "en-GB": "Fish Sauce", "zh-HK": "魚露" },
+    },
+    shaoxingWine: {
+        slug: "shaoxing-wine",
+        name: { "en-GB": "Shaoxing Wine", "zh-HK": "紹興酒" },
+    },
+    oysterSauce: {
+        slug: "oyster-sauce",
+        name: { "en-GB": "Oyster Sauce", "zh-HK": "蠔油" },
+    },
+    hoisinSauce: {
+        slug: "hoisin-sauce",
+        name: { "en-GB": "Hoisin Sauce", "zh-HK": "海鮮醬" },
+    },
+    sesameOil: {
+        slug: "sesame-oil",
+        name: { "en-GB": "Sesame Oil", "zh-HK": "麻油" },
+    },
+    whitePepper: {
+        slug: "white-pepper",
+        name: { "en-GB": "White Pepper", "zh-HK": "胡椒粉" },
+    },
+    chickenPowder: {
+        slug: "chicken-powder",
+        name: { "en-GB": "Chicken Powder", "zh-HK": "雞粉" },
+    },
+    honey: {
+        slug: "honey",
+        name: { "en-GB": "Honey", "zh-HK": "蜜糖" },
+    },
+    briocheBun: {
+        slug: "brioche-bun",
+        name: { "en-GB": "Brioche Bun (French Butter Bread)", "zh-HK": "法式牛油麵包" },
+    },
 } as const satisfies Record<string, Ingredient>;
 
 export type IngredientSlug = keyof typeof ingredients;
