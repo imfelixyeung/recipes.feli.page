@@ -9,8 +9,11 @@ const Layout = async ({
     const locale = await getLocale(params);
     return (
         <div>
-            <Link href={`/${locale}/recipes`} className="text-base-content/50">
-                {s(locale, strings.backToRecipes)}
+            <Link
+                href={`/${locale}/recipes`}
+                className="btn btn-ghost btn-sm text-base-content/60 -ml-2 rounded-full"
+            >
+                ← {s(locale, strings.backToRecipes)}
             </Link>
             <div className="mt-3">{children}</div>
         </div>

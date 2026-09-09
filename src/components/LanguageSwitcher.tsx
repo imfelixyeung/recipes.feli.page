@@ -11,7 +11,11 @@ export const LanguageSwitcher = ({ locale }: { locale: AppLocale }) => {
     const href = `/${target}${pathname.replace(`/${locale}`, "") || "/"}`;
 
     return (
-        <Link href={href} lang={target} className="btn btn-ghost btn-sm">
+        <Link
+            href={href}
+            lang={target}
+            className="btn btn-outline btn-sm border-base-300 rounded-full"
+        >
             {s(locale, strings.localeName[target])}
         </Link>
     );

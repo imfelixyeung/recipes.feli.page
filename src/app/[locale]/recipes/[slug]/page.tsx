@@ -1,4 +1,5 @@
 import RecipeRequirements from "@/src/components/recipe/requirements";
+import { recipeEmoji } from "@/src/components/recipe/recipe-emoji";
 import RecipeSteps from "@/src/components/recipe/steps";
 import { recipes } from "@/src/data/recipes";
 import { getLocale, s } from "@/src/i18n";
@@ -11,6 +12,14 @@ export async function generateStaticParams() {
     }));
 }
 
+const sourceHost = (source: string) => {
+    try {
+        return new URL(source).hostname.replace(/^www\./, "");
+    } catch {
+        return source;
+    }
+};
+
 const Page = async ({ params }: PageProps<"/[locale]/recipes/[slug]">) => {
     const locale = await getLocale(params);
     const { slug } = await params;
@@ -21,53 +30,54 @@ const Page = async ({ params }: PageProps<"/[locale]/recipes/[slug]">) => {
 
     return (
         <div className="@container mx-auto">
-            <h1 className="mb-6 text-3xl font-medium">
-                {s(locale, recipe.name)}
-            </h1>
-            {recipe.source && (
-                <p className="mb-6 text-sm opacity-70">
-                    {s(locale, strings.source)}{" "}
-                    <a
-                        href={recipe.source}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="link"
-                    >
-                        {recipe.source}
-                    </a>
-                </p>
-            )}
+            <header className="mb-8 flex items-start gap-4">
+                <span className="bg-base-200 grid size-16 shrink-0 place-items-center rounded-2xl text-4xl">
+                    {recipeEmoji(recipe.slug)}
+                </span>
+                <div>
+                    <h1 className="text-3xl leading-tight font-semibold tracking-tight text-balance">
+                        {s(locale, recipe.name)}
+                    </h1>
+                    {recipe.source && (
+                        <a
+                            href={recipe.source}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="badge badge-outline badge-sm border-base-300 mt-2 gap-1 rounded-full px-3 py-3"
+                        >
+                            {s(locale, strings.source)}{" "}
+                            {sourceHost(recipe.source)}
+                            <span className="opacity-60">↗</span>
+                        </a>
+                    )}
+                </div>
+            </header>
             <div className="grid gap-6 @3xl:grid-cols-2">
-                <div>
-                    <section className="card bg-base-300">
-                        <div className="card-body">
-                            <h2 className="card-title">
-                                {s(locale, strings.ingredients)}
-                            </h2>
-                            <div className="prose">
-                                <RecipeRequirements
-                                    locale={locale}
-                                    requirements={recipe.requirements}
-                                />
-                            </div>
+                <section className="card border-base-300 bg-base-100 overflow-hidden border">
+                    <span className="from-primary to-accent h-1 w-full bg-gradient-to-r" />
+                    <div className="card-body">
+                        <h2 className="card-title mb-3">
+                            {s(locale, strings.ingredients)}
+                        </h2>
+                        <div className="prose max-w-none">
+                            <RecipeRequirements
+                                locale={locale}
+                                requirements={recipe.requirements}
+                            />
                         </div>
-                    </section>
-                </div>
-                <div>
-                    <section className="card bg-base-300">
-                        <div className="card-body">
-                            <h2 className="card-title">
-                                {s(locale, strings.steps)}
-                            </h2>
-                            <div className="prose">
-                                <RecipeSteps
-                                    locale={locale}
-                                    steps={recipe.steps}
-                                />
-                            </div>
+                    </div>
+                </section>
+                <section className="card border-base-300 bg-base-100 overflow-hidden border">
+                    <span className="from-accent to-secondary h-1 w-full bg-gradient-to-r" />
+                    <div className="card-body">
+                        <h2 className="card-title mb-3">
+                            {s(locale, strings.steps)}
+                        </h2>
+                        <div className="prose max-w-none">
+                            <RecipeSteps locale={locale} steps={recipe.steps} />
                         </div>
-                    </section>
-                </div>
+                    </div>
+                </section>
             </div>
         </div>
     );
