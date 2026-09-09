@@ -148,6 +148,22 @@ export const ingredients = {
         slug: "baking-soda",
         name: { "en-GB": "Baking Soda", "zh-HK": "梳打粉" },
     },
+    redBeans: {
+        slug: "red-beans",
+        name: { "en-GB": "Red Beans", "zh-HK": "紅豆" },
+    },
+    riceFlour: {
+        slug: "rice-flour",
+        name: { "en-GB": "Rice Flour", "zh-HK": "粘米粉" },
+    },
+    brownSugarSlab: {
+        slug: "brown-sugar-slab",
+        name: { "en-GB": "Brown Slab Sugar", "zh-HK": "片糖" },
+    },
+    brownSugar: {
+        slug: "brown-sugar",
+        name: { "en-GB": "Brown Sugar", "zh-HK": "黑糖" },
+    },
 } as const satisfies Record<string, Ingredient>;
 
 export type IngredientSlug = keyof typeof ingredients;
