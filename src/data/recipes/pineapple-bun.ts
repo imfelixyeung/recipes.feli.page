@@ -5,6 +5,12 @@ import { units } from "../units";
 export const pineappleBun: Recipe = {
     slug: "pineapple-bun",
     name: { "en-GB": "Pineapple Bun", "zh-HK": "菠蘿包" },
+    description: {
+        "en-GB":
+            "That signature crackled golden topping wrapped around a soft brioche bun — a Hong Kong bakery classic, baked at home with a crisp buttery crust.",
+        "zh-HK":
+            "菠蘿包最正就係面頭嗰層脆脆地嘅菠蘿皮，配軟熟嘅麵包，焗出嚟有焦香又甜。喺屋企整一樣有餅店嗰種經典風味。",
+    },
     requirements: [
         {
             type: "ingredient",
@@ -58,8 +64,7 @@ export const pineappleBun: Recipe = {
             instruction: {
                 "en-GB":
                     "Bake with top heat at 180°C for 15 minutes, opening the oven door occasionally to let the steam escape.",
-                "zh-HK":
-                    "用180度上火焗15分鐘，久唔久打開焗爐門散走水蒸汽。",
+                "zh-HK": "用180度上火焗15分鐘，久唔久打開焗爐門散走水蒸汽。",
             },
         },
     ],

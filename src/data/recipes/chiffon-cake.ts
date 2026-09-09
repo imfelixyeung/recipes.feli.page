@@ -8,6 +8,12 @@ export const chiffonCake: Recipe = {
         "en-GB": "Chiffon Cake (Christine)",
         "zh-HK": "戚風蛋糕（姬絲汀）",
     },
+    description: {
+        "en-GB":
+            "Wobbling-light chiffon that rises tall and airy in an 8-inch tin — scored on top and baked low and slow for that classic bakery texture.",
+        "zh-HK":
+            "戚風蛋糕漲到高高地，質地又輕又軟，用8吋模慢慢焗，面頭劃咗線所以特別漲得起。同麵包舖買嗰啲一樣鬆。",
+    },
     source: "https://www.christinesrecipes.com/2016/07/orange-chiffon-cake.html",
     requirements: [
         {

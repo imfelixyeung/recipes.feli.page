@@ -19,9 +19,6 @@ export const getLocale = async (
 export type LocalisedString = Record<typeof defaultLocale, string> &
     Partial<Record<(typeof optionalLocale)[number], string>>;
 
-export const s = (locale: AppLocale, string: LocalisedString) => {
-    if (locale in string) {
-        return string[locale];
-    }
-    return string[defaultLocale];
+export const s = (locale: AppLocale, string: LocalisedString): string => {
+    return string[locale] ?? string[defaultLocale];
 };

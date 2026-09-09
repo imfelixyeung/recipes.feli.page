@@ -8,6 +8,12 @@ export const riceCookerCake: Recipe = {
         "en-GB": "Rice Cooker Cake (Tastes Like Paper-wrapped Cake)",
         "zh-HK": "電飯煲蛋糕（味道似紙包蛋糕）",
     },
+    description: {
+        "en-GB":
+            "A paper-wrapped cake that never saw an oven — the sponge bakes to golden perfection inside a rice cooker lined with baking paper, tasting just like the bakery version.",
+        "zh-HK":
+            "用電飯煲就整到紙包蛋糕嘅味道，飯煲入面墊張焗爐紙，唔使焗爐都焗得出金黃鬆軟嘅蛋糕。",
+    },
     requirements: [
         {
             type: "ingredient",

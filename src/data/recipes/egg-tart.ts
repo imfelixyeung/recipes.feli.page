@@ -118,14 +118,16 @@ const eggTartFilling: Recipe = {
         {
             type: "instruction",
             instruction: {
-                "en-GB": "Mix the water, evaporated milk and custard powder together.",
+                "en-GB":
+                    "Mix the water, evaporated milk and custard powder together.",
                 "zh-HK": "將水、淡奶同吉士粉拌勻。",
             },
         },
         {
             type: "instruction",
             instruction: {
-                "en-GB": "Add the milk mixture from step 2 into the egg mixture.",
+                "en-GB":
+                    "Add the milk mixture from step 2 into the egg mixture.",
                 "zh-HK": "將步驟2嘅奶漿倒入蛋糊度。",
             },
         },
@@ -148,7 +150,16 @@ const eggTartFilling: Recipe = {
 
 export const eggTart: Recipe = {
     slug: "egg-tart",
-    name: { "en-GB": "Hong Kong Egg Tart (8 nos.)", "zh-HK": "港式蛋撻（8個）" },
+    name: {
+        "en-GB": "Hong Kong Egg Tart (8 nos.)",
+        "zh-HK": "港式蛋撻（8個）",
+    },
+    description: {
+        "en-GB":
+            "A buttery, melt-in-the-mouth pastry filled with an egg custard sieved three times for that silky, wobbly middle.",
+        "zh-HK":
+            "牛油味十足、入口即溶嘅撻皮，配過咗三次篩、滑捋捋嘅蛋漿，先係港式蛋撻嗰種滋味。",
+    },
     source: "https://youtu.be/gVaJst9YGGI",
     requirements: [
         { type: "recipe", recipe: eggTartPastry },
@@ -162,8 +173,7 @@ export const eggTart: Recipe = {
             instruction: {
                 "en-GB":
                     "Use 24g of pastry per 7cm egg tart mould; use 4 pieces of pastry if using a large mould.",
-                "zh-HK":
-                    "7cm蛋撻模用24g撻皮；如果用較大嘅模就用4件撻皮。",
+                "zh-HK": "7cm蛋撻模用24g撻皮；如果用較大嘅模就用4件撻皮。",
             },
         },
     ],

@@ -4,6 +4,12 @@ import { units } from "../units";
 
 export const eggWaffleRecipe: Recipe = {
     name: { "en-GB": "Egg Waffle", "zh-HK": "格仔餅 夾餅 雞蛋仔" },
+    description: {
+        "en-GB":
+            "Crisp outside, chewy within — the batter blends low-gluten flour with tapioca and custard powder, then rests for half an hour before a quick five-minute bake.",
+        "zh-HK":
+            "外脆內軟，麵糊用低筋麵粉溝木薯粉同吉士粉，靜置半個鐘先焗，焗足五分鐘就食到街邊嗰種口感。",
+    },
     slug: "egg-waffle",
     requirements: [
         {

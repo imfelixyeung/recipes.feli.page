@@ -5,6 +5,12 @@ import { units } from "../units";
 export const gingerMilkPudding: Recipe = {
     slug: "ginger-milk-pudding",
     name: { "en-GB": "Ginger Milk Pudding", "zh-HK": "薑汁撞奶" },
+    description: {
+        "en-GB":
+            "Warm milk poured into sharp ginger juice sets into a silky pudding — the trick is high-protein milk at 75°C and keeping the ginger sediment in.",
+        "zh-HK":
+            "將75度嘅熱奶撞入辛辣嘅薑汁，撞出嚟滑嘟嘟嘅布甸，秘訣係用高蛋白牛奶，仲要記得唔好倒咗啲薑汁沉澱。",
+    },
     requirements: [
         {
             type: "ingredient",

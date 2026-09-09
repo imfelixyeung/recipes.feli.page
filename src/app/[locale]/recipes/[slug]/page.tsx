@@ -4,6 +4,14 @@ import RecipeSteps from "@/src/components/recipe/steps";
 import { recipes } from "@/src/data/recipes";
 import { getLocale, s } from "@/src/i18n";
 import { strings } from "@/src/i18n/strings";
+import { recipeJsonLd } from "@/src/lib/recipe-jsonld";
+import {
+    absoluteUrl,
+    localizedLinks,
+    localePath,
+    ogLocale,
+} from "@/src/lib/seo";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
@@ -11,6 +19,44 @@ export async function generateStaticParams() {
         slug: recipe.slug,
     }));
 }
+
+export const generateMetadata = async ({
+    params,
+}: PageProps<"/[locale]/recipes/[slug]">): Promise<Metadata> => {
+    const locale = await getLocale(params);
+    const { slug } = await params;
+    const recipe = recipes.find((r) => r.slug === slug);
+    if (!recipe) {
+        notFound();
+    }
+
+    const title = s(locale, recipe.name);
+    const description = recipe.description
+        ? s(locale, recipe.description)
+        : `${title} — ${s(locale, strings.homeSubtitle)}`;
+    const path = `/recipes/${slug}`;
+
+    return {
+        title,
+        description,
+        alternates: {
+            canonical: absoluteUrl(localePath(locale, path)),
+            ...localizedLinks(path),
+        },
+        openGraph: {
+            type: "article",
+            title,
+            description,
+            url: absoluteUrl(localePath(locale, path)),
+            locale: ogLocale(locale),
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+        },
+    };
+};
 
 const sourceHost = (source: string) => {
     try {
@@ -30,6 +76,14 @@ const Page = async ({ params }: PageProps<"/[locale]/recipes/[slug]">) => {
 
     return (
         <div className="@container mx-auto">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(
+                        recipeJsonLd(recipe, locale, `/recipes/${recipe.slug}`),
+                    ),
+                }}
+            />
             <header className="mb-8 flex items-start gap-4">
                 <span className="bg-base-200 grid size-16 shrink-0 place-items-center rounded-2xl text-4xl">
                     {recipeEmoji(recipe.slug)}

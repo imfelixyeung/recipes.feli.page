@@ -8,6 +8,12 @@ export const tokyoBanana: Recipe = {
         "en-GB": "Banana Cream Sponge Cake (Tokyo Banana)",
         "zh-HK": "香蕉糕",
     },
+    description: {
+        "en-GB":
+            "Cloud-soft chiffon stuffed with silky banana custard cream and folded into a little banana pillow, just like the famous Tokyo souvenir — all from scratch at home.",
+        "zh-HK":
+            "蛋糕軟綿綿，中間唧滿香蕉忌廉，摺起嚟似香蕉仔咁，好有日本手信嗰種味道。喺屋企自己整都完全得。",
+    },
     source: "https://youtu.be/LBo_2euj__c",
     requirements: [
         {

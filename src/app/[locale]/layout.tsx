@@ -1,7 +1,14 @@
 import { LanguageSwitcher } from "@/src/components/LanguageSwitcher";
-import { getLocale, s } from "@/src/i18n";
+import { getLocale, s, supportedLocales } from "@/src/i18n";
 import { strings } from "@/src/i18n/strings";
-import type { Metadata } from "next";
+import {
+    absoluteUrl,
+    localizedLinks,
+    localePath,
+    ogLocale,
+    siteUrl,
+} from "@/src/lib/seo";
+import type { Metadata, Viewport } from "next";
 import { Google_Sans_Flex } from "next/font/google";
 import Link from "next/link";
 import "../globals.css";
@@ -11,12 +18,54 @@ const sans = Google_Sans_Flex({
     subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+    width: "device-width",
+    initialScale: 1,
+};
+
+export function generateStaticParams() {
+    return supportedLocales.map((locale) => ({ locale }));
+}
+
 export const generateMetadata = async ({
     params,
 }: LayoutProps<"/[locale]">): Promise<Metadata> => {
     const locale = await getLocale(params);
 
-    return { title: s(locale, strings.recipes) };
+    const title = s(locale, strings.homeTitle);
+    const description = s(locale, strings.homeSubtitle);
+    const siteName = s(locale, strings.siteName);
+    const path = "";
+
+    return {
+        metadataBase: new URL(siteUrl),
+        title: {
+            default: title,
+            template: `%s — ${siteName}`,
+        },
+        description,
+        robots: {
+            index: true,
+            follow: true,
+        },
+        alternates: {
+            canonical: absoluteUrl(localePath(locale, path)),
+            ...localizedLinks(path),
+        },
+        openGraph: {
+            type: "website",
+            siteName,
+            title,
+            description,
+            url: absoluteUrl(localePath(locale, path)),
+            locale: ogLocale(locale),
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+        },
+    };
 };
 
 export default async function RootLayout({

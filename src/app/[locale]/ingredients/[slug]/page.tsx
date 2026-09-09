@@ -2,6 +2,13 @@ import { Ingredient, ingredients } from "@/src/data/ingredients";
 import { Recipe, recipes } from "@/src/data/recipes";
 import { getLocale, s } from "@/src/i18n";
 import { strings } from "@/src/i18n/strings";
+import {
+    absoluteUrl,
+    localizedLinks,
+    localePath,
+    ogLocale,
+} from "@/src/lib/seo";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -10,6 +17,45 @@ export async function generateStaticParams() {
         slug: recipe.slug,
     }));
 }
+
+export const generateMetadata = async ({
+    params,
+}: PageProps<"/[locale]/ingredients/[slug]">): Promise<Metadata> => {
+    const locale = await getLocale(params);
+    const { slug } = await params;
+    const ingredient = Object.values(ingredients).find((i) => i.slug === slug);
+    if (!ingredient) {
+        notFound();
+    }
+
+    const title = s(locale, ingredient.name);
+    const path = `/ingredients/${slug}`;
+    const description =
+        locale === "en-GB"
+            ? `${recipes.length} recipes and counting that call for ${title.toLowerCase()} — tested in our own kitchen.`
+            : `${title}——我哋有 ${recipes.length} 個食譜用緊佢，全部喺自家廚房試過。`;
+
+    return {
+        title,
+        description,
+        alternates: {
+            canonical: absoluteUrl(localePath(locale, path)),
+            ...localizedLinks(path),
+        },
+        openGraph: {
+            type: "website",
+            title,
+            description,
+            url: absoluteUrl(localePath(locale, path)),
+            locale: ogLocale(locale),
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+        },
+    };
+};
 
 const findIngredient = (slug: string) => {
     return Object.values(ingredients).find((i) => i.slug === slug);

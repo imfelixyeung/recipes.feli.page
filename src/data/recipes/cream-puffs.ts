@@ -5,6 +5,12 @@ import { units } from "../units";
 export const creamPuffs: Recipe = {
     slug: "cream-puffs",
     name: { "en-GB": "Cream Puffs (12)", "zh-HK": "泡芙（12個）" },
+    description: {
+        "en-GB":
+            "Crisp golden choux shells filled with a rich, from-scratch custard cream — a crunchy bite that gives way to soft, silky filling. Makes 12.",
+        "zh-HK":
+            "脆卜卜嘅泡芙皮，唧滿自己煲嘅吉士忌廉，咬落咔一聲就滿口軟滑。整到12個，自己食又好，攞嚟分享都好。",
+    },
     requirements: [
         {
             type: "ingredient",

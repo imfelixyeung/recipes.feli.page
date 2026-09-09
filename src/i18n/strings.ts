@@ -1,6 +1,10 @@
 import { LocalisedString } from ".";
 
 export const strings = {
+    siteName: {
+        "en-GB": "Hong Kong Recipes",
+        "zh-HK": "港式食譜",
+    },
     browseRecipes: {
         "en-GB": "Browse Recipes",
         "zh-HK": "睇下食譜",

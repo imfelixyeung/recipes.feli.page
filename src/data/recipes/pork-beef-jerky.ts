@@ -21,7 +21,8 @@ const maltoseWater: Recipe = {
         {
             type: "instruction",
             instruction: {
-                "en-GB": "Mix the maltose with the hot water and stir until dissolved.",
+                "en-GB":
+                    "Mix the maltose with the hot water and stir until dissolved.",
                 "zh-HK": "將麥芽糖同熱水攪勻至溶化。",
             },
         },
@@ -31,6 +32,12 @@ const maltoseWater: Recipe = {
 export const porkBeefJerky: Recipe = {
     slug: "pork-beef-jerky",
     name: { "en-GB": "Pork/Beef Jerky", "zh-HK": "豬肉乾 牛肉乾" },
+    description: {
+        "en-GB":
+            "Chewy, glossy home-made pork and beef jerky — minced meat seasoned with fish sauce, hoisin and five-spice, then glazed with maltose water for a sweet, sticky finish.",
+        "zh-HK":
+            "自家製肉乾，豬肉牛肉各半斤，用魚露、海鮮醬同五香粉醃到夠味，揸上麥芽糖水再烘，煙韌又甜美。",
+    },
     source: "https://youtu.be/RGp1Odmytsk",
     requirements: [
         {
@@ -114,8 +121,7 @@ export const porkBeefJerky: Recipe = {
         {
             type: "instruction",
             instruction: {
-                "en-GB":
-                    "Add extra honey if you prefer a heavier honey glaze.",
+                "en-GB": "Add extra honey if you prefer a heavier honey glaze.",
                 "zh-HK": "喜歡蜜汁重嘅可以額外加蜜糖。",
             },
         },

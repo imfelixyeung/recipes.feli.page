@@ -8,6 +8,12 @@ export const putChaiKo: Recipe = {
         "en-GB": "Put Chai Ko (Red Bean Pudding Cake, 6)",
         "zh-HK": "砵仔糕（6個）",
     },
+    description: {
+        "en-GB":
+            "Soft red beans in a bouncy, chewy steamed cake made from rice and tapioca flour, sweetened with brown sugar.",
+        "zh-HK":
+            "軟腍嘅紅豆配煙煙韌韌嘅米粉糕，加埋木薯粉變彈牙，再落片糖同黃糖添甜味，就係街邊成日見到嗰種砵仔糕。",
+    },
     requirements: [
         {
             type: "ingredient",

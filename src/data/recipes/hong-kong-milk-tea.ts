@@ -8,6 +8,12 @@ export const hongKongMilkTea: Recipe = {
         "en-GB": "Hong Kong Milk Tea (Authentic, serves 3)",
         "zh-HK": "奶茶（正宗港式奶茶-3人份量）",
     },
+    description: {
+        "en-GB":
+            "The real cha chaan teng experience — tea poured, simmered and slammed between pots with the 1-pour-2-steep-3-splash-4-reheat method for a silky, smooth cup.",
+        "zh-HK":
+            "正宗茶餐廳味道，跟住一沖二焗三撞四回溫嘅口訣，將茶撞到又滑又順，飲落好滑口。",
+    },
     requirements: [
         {
             type: "ingredient",
@@ -103,8 +109,7 @@ export const hongKongMilkTea: Recipe = {
             instruction: {
                 "en-GB":
                     "Simmer the tea again on a low flame for 5-10 minutes (fourth reheat); once the tea is hot it is ready to enjoy.",
-                "zh-HK":
-                    "再用細火將茶煲5-10分鐘（四回溫），水煲熱後便可享用。",
+                "zh-HK": "再用細火將茶煲5-10分鐘（四回溫），水煲熱後便可享用。",
             },
         },
         {
@@ -129,8 +134,7 @@ export const hongKongMilkTea: Recipe = {
             instruction: {
                 "en-GB":
                     "Pour the boiled tea into the evaporated milk (remember to strain through a sieve).",
-                "zh-HK":
-                    "將煲滾咗嘅茶撞入花奶（記得用sieve隔渣）。",
+                "zh-HK": "將煲滾咗嘅茶撞入花奶（記得用sieve隔渣）。",
             },
         },
         {

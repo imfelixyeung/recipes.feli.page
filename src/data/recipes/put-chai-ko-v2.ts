@@ -5,6 +5,12 @@ import { units } from "../units";
 export const putChaiKoV2: Recipe = {
     slug: "put-chai-ko-v2",
     name: { "en-GB": "Put Chai Ko v2 (6)", "zh-HK": "砵仔糕v2（6個）" },
+    description: {
+        "en-GB":
+            "Soft, bouncy steamed rice puddings in little bowls, sweetened with fragrant brown sugar and topped with red beans.",
+        "zh-HK":
+            "軟糯彈牙嘅砵仔糕，用黃糖整到又甜又香，面頭鋪滿紅豆，好似街邊檔嗰種味道。",
+    },
     requirements: [
         {
             type: "ingredient",

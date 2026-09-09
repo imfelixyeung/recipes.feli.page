@@ -192,6 +192,12 @@ const bbqSauce: Recipe = {
 export const bbqFriedDough: Recipe = {
     slug: "bbq-fried-dough",
     name: { "en-GB": "BBQ Fried Dough", "zh-HK": "齋燒鵝" },
+    description: {
+        "en-GB":
+            "The classic vegetarian take on barbecue pork — steamed dough air-fried until crisp and chewy, then coated in a sticky maltose and five-spice sauce.",
+        "zh-HK":
+            "呢個係齋版嘅燒肉，用蒸好嘅麵團放空氣炸鍋炸到乾身香脆，再撈滿麥芽糖同五香粉醬汁，又甜又惹味。",
+    },
     requirements: [
         { type: "recipe", recipe: friedDough },
         { type: "recipe", recipe: bbqSauce },

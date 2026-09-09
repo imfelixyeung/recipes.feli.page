@@ -2,6 +2,44 @@ import RecipeCard from "@/src/components/recipe/recipe-card";
 import { recipes } from "@/src/data/recipes";
 import { getLocale, s } from "@/src/i18n";
 import { strings } from "@/src/i18n/strings";
+import {
+    absoluteUrl,
+    localizedLinks,
+    localePath,
+    ogLocale,
+} from "@/src/lib/seo";
+import type { Metadata } from "next";
+
+export const generateMetadata = async ({
+    params,
+}: PageProps<"/[locale]/recipes">): Promise<Metadata> => {
+    const locale = await getLocale(params);
+
+    const title = s(locale, strings.browseRecipes);
+    const description = `${recipes.length} ${s(locale, strings.recipesAndCounting)}. ${s(locale, strings.homeSubtitle)}`;
+    const path = "/recipes";
+
+    return {
+        title,
+        description,
+        alternates: {
+            canonical: absoluteUrl(localePath(locale, path)),
+            ...localizedLinks(path),
+        },
+        openGraph: {
+            type: "website",
+            title,
+            description,
+            url: absoluteUrl(localePath(locale, path)),
+            locale: ogLocale(locale),
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+        },
+    };
+};
 
 const Page = async ({ params }: PageProps<"/[locale]/recipes">) => {
     const locale = await getLocale(params);

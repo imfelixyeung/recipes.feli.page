@@ -5,6 +5,12 @@ import { units } from "../units";
 export const hongKongEggRolls: Recipe = {
     slug: "egg-rolls",
     name: { "en-GB": "Hong Kong Egg Rolls (30)", "zh-HK": "蛋卷（30條）" },
+    description: {
+        "en-GB":
+            "Feather-light spiralled egg rolls, each one cooked in the pan for a few seconds each side until crisp, buttery and impossibly moreish.",
+        "zh-HK":
+            "又薄又鬆嘅蛋卷，逐條細火慢慢烘，烘到脆卜卜，牛油味香到停唔到口。",
+    },
     requirements: [
         {
             type: "ingredient",
