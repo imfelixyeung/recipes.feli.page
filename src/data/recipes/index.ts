@@ -7,6 +7,7 @@ import { eggWaffleRecipe } from "./egg-waffle";
 import { eggTart } from "./egg-tart";
 import { gingerMilkPudding } from "./ginger-milk-pudding";
 import { putChaiKo } from "./put-chai-ko";
+import { putChaiKoV2 } from "./put-chai-ko-v2";
 import { hongKongMilkTea } from "./hong-kong-milk-tea";
 import { hongKongEggRolls } from "./hong-kong-egg-rolls";
 import { caramelPopcorn } from "./caramel-popcorn";
@@ -57,6 +58,7 @@ export const recipes: Recipe[] = [
     eggWaffleRecipe,
     gingerMilkPudding,
     putChaiKo,
+    putChaiKoV2,
     hongKongMilkTea,
     hongKongEggRolls,
     caramelPopcorn,
