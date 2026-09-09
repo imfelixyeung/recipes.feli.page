@@ -7,6 +7,7 @@ import { eggWaffleRecipe } from "./egg-waffle";
 import { eggTart } from "./egg-tart";
 import { gingerMilkPudding } from "./ginger-milk-pudding";
 import { hongKongMilkTea } from "./hong-kong-milk-tea";
+import { hongKongEggRolls } from "./hong-kong-egg-rolls";
 import { tokyoBanana } from "./tokyo-banana";
 
 export type MeasurementValueFixed = number;
@@ -54,5 +55,6 @@ export const recipes: Recipe[] = [
     eggWaffleRecipe,
     gingerMilkPudding,
     hongKongMilkTea,
+    hongKongEggRolls,
     tokyoBanana,
 ];
