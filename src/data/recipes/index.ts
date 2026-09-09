@@ -11,6 +11,7 @@ import { putChaiKoV2 } from "./put-chai-ko-v2";
 import { hongKongMilkTea } from "./hong-kong-milk-tea";
 import { hongKongEggRolls } from "./hong-kong-egg-rolls";
 import { caramelPopcorn } from "./caramel-popcorn";
+import { porkBeefJerky } from "./pork-beef-jerky";
 import { tokyoBanana } from "./tokyo-banana";
 
 export type MeasurementValueFixed = number;
@@ -62,5 +63,6 @@ export const recipes: Recipe[] = [
     hongKongMilkTea,
     hongKongEggRolls,
     caramelPopcorn,
+    porkBeefJerky,
     tokyoBanana,
 ];
