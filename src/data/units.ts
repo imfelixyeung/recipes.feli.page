@@ -26,4 +26,7 @@ export const units = {
     millimetre: {
         name: { "en-GB": "Millimetre", "zh-HK": "毫米" },
     },
+    drop: {
+        name: { "en-GB": "Drop", "zh-HK": "滴" },
+    },
 } as const satisfies Record<string, Unit>;
