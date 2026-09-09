@@ -43,32 +43,32 @@ const Page = async ({ params }: PageProps<"/[locale]/ingredients/[slug]">) => {
     const relatedRecipes = findRecipes(recipes, ingredient);
 
     return (
-        <div>
-            <h1 className="mb-6 text-3xl font-medium">
-                {s(locale, ingredient.name)}
-            </h1>
-            <div>
-                <section className="card bg-base-300">
-                    <div className="card-body">
-                        <h2 className="card-title">
-                            {s(locale, strings.usedIn)}
-                        </h2>
-                        <div className="prose">
-                            <ul>
-                                {relatedRecipes.map((r) => (
-                                    <li key={r.slug}>
-                                        <Link
-                                            href={`/${locale}/recipes/${r.slug}`}
-                                        >
-                                            {s(locale, r.name)}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-            </div>
+        <div className="mx-auto max-w-2xl">
+            <header className="mt-4 mb-8">
+                <h1 className="text-3xl font-semibold tracking-tight">
+                    {s(locale, ingredient.name)}
+                </h1>
+                <p className="text-base-content/60 mt-2">
+                    {s(locale, strings.usedIn)}
+                </p>
+            </header>
+            <ul className="flex flex-col gap-3">
+                {relatedRecipes.map((r) => (
+                    <li key={r.slug}>
+                        <Link
+                            href={`/${locale}/recipes/${r.slug}`}
+                            className="group border-base-300 bg-base-100 hover:border-primary/50 flex items-center justify-between gap-3 rounded-2xl border px-5 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+                        >
+                            <span className="font-medium">
+                                {s(locale, r.name)}
+                            </span>
+                            <span className="opacity-40 transition group-hover:translate-x-0.5 group-hover:opacity-100">
+                                →
+                            </span>
+                        </Link>
+                    </li>
+                ))}
+            </ul>
         </div>
     );
 };

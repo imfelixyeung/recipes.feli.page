@@ -1,27 +1,31 @@
+import RecipeCard from "@/src/components/recipe/recipe-card";
 import { recipes } from "@/src/data/recipes";
 import { getLocale, s } from "@/src/i18n";
-import Link from "next/link";
+import { strings } from "@/src/i18n/strings";
 
 const Page = async ({ params }: PageProps<"/[locale]/recipes">) => {
     const locale = await getLocale(params);
     return (
-        <div className="@container">
-            <ul className="grid gap-3 @4xl:grid-cols-3 @4xl:gap-6">
-                {recipes.map((recipe, index) => {
-                    return (
-                        <li key={index} className="card bg-base-200">
-                            <div className="card-body">
-                                <Link
-                                    href={`/${locale}/recipes/${recipe.slug}`}
-                                    className="card-title"
-                                >
-                                    {s(locale, recipe.name)}
-                                </Link>
-                            </div>
-                        </li>
-                    );
-                })}
-            </ul>
+        <div>
+            <header className="mt-4 mb-8">
+                <h1 className="text-3xl font-semibold tracking-tight">
+                    {s(locale, strings.recipes)}
+                </h1>
+                <p className="text-base-content/60 mt-2">
+                    {recipes.length} {s(locale, strings.recipesAndCounting)}
+                </p>
+            </header>
+            <div className="@container">
+                <ul className="grid gap-3 @2xl:grid-cols-2 @2xl:gap-5 @4xl:grid-cols-3">
+                    {recipes.map((recipe) => {
+                        return (
+                            <li key={recipe.slug}>
+                                <RecipeCard recipe={recipe} locale={locale} />
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div>
         </div>
     );
 };
