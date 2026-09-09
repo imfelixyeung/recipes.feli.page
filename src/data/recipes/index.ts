@@ -16,6 +16,7 @@ import { tokyoBanana } from "./tokyo-banana";
 import { chiffonCake } from "./chiffon-cake";
 import { riceCookerCake } from "./rice-cooker-cake";
 import { creamPuffs } from "./cream-puffs";
+import { pineappleBun } from "./pineapple-bun";
 
 export type MeasurementValueFixed = number;
 export type MeasurementValueRanged = [number, number];
@@ -71,4 +72,5 @@ export const recipes: Recipe[] = [
     chiffonCake,
     riceCookerCake,
     creamPuffs,
+    pineappleBun,
 ];

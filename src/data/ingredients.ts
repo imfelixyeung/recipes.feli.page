@@ -212,6 +212,10 @@ export const ingredients = {
         slug: "honey",
         name: { "en-GB": "Honey", "zh-HK": "蜜糖" },
     },
+    briocheBun: {
+        slug: "brioche-bun",
+        name: { "en-GB": "Brioche Bun (French Butter Bread)", "zh-HK": "法式牛油麵包" },
+    },
 } as const satisfies Record<string, Ingredient>;
 
 export type IngredientSlug = keyof typeof ingredients;
