@@ -29,4 +29,7 @@ export const units = {
     drop: {
         name: { "en-GB": "Drop", "zh-HK": "滴" },
     },
+    box: {
+        name: { "en-GB": "Box", "zh-HK": "盒" },
+    },
 } as const satisfies Record<string, Unit>;

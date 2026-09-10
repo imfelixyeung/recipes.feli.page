@@ -216,6 +216,30 @@ export const ingredients = {
         slug: "brioche-bun",
         name: { "en-GB": "Brioche Bun (French Butter Bread)", "zh-HK": "法式牛油麵包" },
     },
+    digestiveBiscuits: {
+        slug: "digestive-biscuits",
+        name: { "en-GB": "Digestive Biscuits", "zh-HK": "消化餅" },
+    },
+    mangoJellyMix: {
+        slug: "mango-jelly-mix",
+        name: { "en-GB": "Mango Jelly Mix", "zh-HK": "芒果啫喱粉" },
+    },
+    gelatinPowder: {
+        slug: "gelatin-powder",
+        name: { "en-GB": "Gelatin Powder", "zh-HK": "魚膠粉" },
+    },
+    creamCheese: {
+        slug: "cream-cheese",
+        name: { "en-GB": "Cream Cheese", "zh-HK": "忌廉芝士" },
+    },
+    doubleCream: {
+        slug: "double-cream",
+        name: { "en-GB": "Double Cream", "zh-HK": "忌廉" },
+    },
+    frozenMangoChunks: {
+        slug: "frozen-mango-chunks",
+        name: { "en-GB": "Frozen Mango Chunks", "zh-HK": "急凍芒果肉" },
+    },
 } as const satisfies Record<string, Ingredient>;
 
 export type IngredientSlug = keyof typeof ingredients;
