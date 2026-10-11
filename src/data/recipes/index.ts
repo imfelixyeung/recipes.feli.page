@@ -53,6 +53,7 @@ export type Step = StepInstruction | StepRecipe | StepAirFry;
 export type Recipe = {
     slug: string;
     name: LocalisedString;
+    duration?: number;
     description?: LocalisedString;
     requirements: RecipeRequirement[];
     steps: Step[];

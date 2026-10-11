@@ -1,3 +1,4 @@
+import ms from 'ms';
 import { Recipe } from ".";
 import { ingredients } from "../ingredients";
 import { units } from "../units";
@@ -201,6 +202,7 @@ const mangoCheesecakeFilling: Recipe = {
 export const mangoCheesecake: Recipe = {
     slug: "mango-cheesecake",
     name: { "en-GB": "Mango Cheesecake", "zh-HK": "芒果芝士蛋糕" },
+    duration: ms('1.25h'),
     description: {
         "en-GB":
             "A no-bake mango cheesecake with a buttery digestive biscuit base, whipped double cream and cream cheese folded together with mango purée and jelly, topped with a mango swirl.",
